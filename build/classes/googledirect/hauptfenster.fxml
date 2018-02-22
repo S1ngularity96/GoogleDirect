@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="1020.0" maxWidth="1920.0" minHeight="480.0" minWidth="900.0" prefHeight="660.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="googledirect.Hauptfenster">
+   <children>
+      <MenuBar maxWidth="1.7976931348623157E308" minHeight="25.0" prefHeight="28.0" prefWidth="1280.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Datei">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#datenLadenAction" text="Datenbank aus Datei laden" />
+                  <MenuItem mnemonicParsing="false" onAction="#datenSpeichernAction" text="Daten in Datei speichern" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Tour">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#tourAusDateiLadenAction" text="Tour aus Datei laden" />
+                  <MenuItem mnemonicParsing="false" onAction="#tourInDateiSpeichernAction" text="Tour in Datei speichern" />
+                  <SeparatorMenuItem mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" onAction="#tourLeeren" text="Tour leeren" />
+                  <MenuItem mnemonicParsing="false" onAction="#tourAussrechnenAction" text="Tour berrechnen" />
+              </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="KlickTel">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#klickTelImportieren" text="Favoriten importieren" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <HBox layoutY="13.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
+         <children>
+            <VBox>
+               <children>
+                  <Label alignment="CENTER" minWidth="178.0" prefHeight="28.0" prefWidth="406.0" text="Stationen / Personen">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="stationenPersonenListe" maxWidth="1.7976931348623157E308" prefHeight="786.0" prefWidth="405.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="20.0" />
+                     </VBox.margin>
+                  </ListView>
+                  <TextField fx:id="suchfensterPersonStation" alignment="CENTER" onKeyTyped="#sucheNachPersonAction" prefHeight="25.0" prefWidth="371.0" promptText="Suche">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <Button mnemonicParsing="false" onAction="#personStationHinzufuegenAction" prefHeight="25.0" prefWidth="407.0" text="Person/Station Hinzufügen" />
+               </children>
+               <HBox.margin>
+                  <Insets bottom="30.0" right="10.0" top="20.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox>
+               <children>
+                  <Button minWidth="128.0" mnemonicParsing="false" onAction="#stationInTourUebertragen" prefHeight="25.0" prefWidth="128.0" text="&gt;&gt;">
+                     <VBox.margin>
+                        <Insets bottom="8.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button minWidth="128.0" mnemonicParsing="false" onAction="#stationAusTourEntfernen" prefHeight="25.0" prefWidth="128.0" text="&lt;&lt;">
+                     <VBox.margin>
+                        <Insets bottom="8.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button minWidth="128.0" mnemonicParsing="false" onAction="#tourLeeren" prefHeight="25.0" prefWidth="128.0" text="Tour leeren">
+                     <VBox.margin>
+                        <Insets bottom="8.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets left="40.0" right="40.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets top="200.0" />
+               </padding>
+            </VBox>
+            <VBox>
+               <children>
+                  <Label alignment="CENTER" minWidth="189.0" prefHeight="28.0" prefWidth="460.0" text="Tour für die Rechnung">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <ListView fx:id="tourListe" onKeyPressed="#tourListeAction" prefHeight="507.0" prefWidth="351.0">
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="20.0" />
+                     </VBox.margin>
+                  </ListView>
+                  <Button mnemonicParsing="false" onAction="#tourAussrechnenAction" prefHeight="25.0" prefWidth="463.0" text="Berrechnen" />
+               </children>
+               <HBox.margin>
+                  <Insets bottom="30.0" right="20.0" top="20.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox>
+               <children>
+                  <Label alignment="CENTER" minWidth="196.0" prefHeight="28.0" prefWidth="702.0" text="Ausgabe der Rechnung">
+                     <font>
+                        <Font size="19.0" />
+                     </font>
+                  </Label>
+                  <TextArea fx:id="ausgabeTextArea" editable="false" maxHeight="1.7976931348623157E308" prefHeight="800.0" prefWidth="700.0" wrapText="true">
+                     <font>
+                        <Font size="16.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets bottom="10.0" top="20.0" />
+                     </VBox.margin>
+                  </TextArea>
+                  <Button mnemonicParsing="false" onAction="#ausgabeLeerenAction" prefHeight="25.0" prefWidth="702.0" text="Ausgabe leeren">
+                     <VBox.margin>
+                        <Insets bottom="30.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <HBox.margin>
+                  <Insets top="20.0" />
+               </HBox.margin>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="20.0" left="15.0" right="15.0" top="20.0" />
+         </padding>
+      </HBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="googledirect.Hauptfenster">
+   <children>
+      <ListView fx:id="stationenPersonenListe" layoutX="14.0" layoutY="78.0" prefHeight="506.0" prefWidth="371.0" />
+      <ListView fx:id="tourListe" layoutX="540.0" layoutY="78.0" prefHeight="506.0" prefWidth="284.0" />
+      <TextArea fx:id="ausgabeTextArea" editable="false" layoutX="865.0" layoutY="78.0" prefHeight="506.0" prefWidth="371.0" wrapText="true">
+         <font>
+            <Font size="14.0" />
+         </font></TextArea>
+      <Button layoutX="14.0" layoutY="649.0" mnemonicParsing="false" onAction="#personStationHinzufuegenAction" prefHeight="25.0" prefWidth="371.0" text="Person/Station Hinzufügen" />
+      <Label alignment="CENTER" layoutX="14.0" layoutY="47.0" prefHeight="17.0" prefWidth="371.0" text="Stationen / Personen">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="540.0" layoutY="47.0" prefHeight="17.0" prefWidth="284.0" text="Tour für die Rechnung">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" layoutX="865.0" layoutY="47.0" prefHeight="17.0" prefWidth="371.0" text="Ausgabe der Rechnung">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </Label>
+      <Button layoutX="398.0" layoutY="215.0" mnemonicParsing="false" onAction="#stationInTourUebertragen" prefHeight="25.0" prefWidth="128.0" text="&gt;&gt;" />
+      <Button layoutX="398.0" layoutY="292.0" mnemonicParsing="false" onAction="#tourLeeren" prefHeight="25.0" prefWidth="128.0" text="Tour leeren" />
+      <TextField fx:id="suchfensterPersonStation" alignment="CENTER" disable="true" layoutX="14.0" layoutY="608.0" onInputMethodTextChanged="#sucheNachPersonAction" prefHeight="25.0" prefWidth="371.0" promptText="Suche" />
+      <Button layoutX="398.0" layoutY="254.0" mnemonicParsing="false" onAction="#stationAusTourEntfernen" prefHeight="25.0" prefWidth="128.0" text="&lt;&lt;" />
+      <MenuBar prefHeight="25.0" prefWidth="1293.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Datei">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#datenLadenAction" text="Datenbank aus Datei laden" />
+                  <MenuItem mnemonicParsing="false" onAction="#datenSpeichernAction" text="Daten in Datei speichern" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" text="Tour">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#tourAusDateiLadenAction" text="Tour aus Datei laden" />
+                  <MenuItem mnemonicParsing="false" onAction="#tourInDateiSpeichernAction" text="Tour in Datei speichern" />
+                  <MenuItem mnemonicParsing="false" onAction="#tourLeeren" text="Tour leeren" />
+                  <MenuItem mnemonicParsing="false" onAction="#tourAussrechnenAction" text="Tour berrechnen" />
+              </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+      <Button layoutX="540.0" layoutY="608.0" mnemonicParsing="false" onAction="#tourAussrechnenAction" prefHeight="25.0" prefWidth="284.0" text="Berrechnen" />
+      <Button layoutX="865.0" layoutY="608.0" mnemonicParsing="false" onAction="#ausgabeLeerenAction" prefHeight="25.0" prefWidth="371.0" text="Ausgabe leeren" />
+      <Button disable="true" layoutX="865.0" layoutY="649.0" mnemonicParsing="false" onAction="#inTXTspeichernAction" prefHeight="25.0" prefWidth="371.0" text="In TXT speichern" />
+      <ProgressBar fx:id="progressBar" layoutX="1108.0" layoutY="688.0" prefHeight="18.0" prefWidth="128.0" visible="false" />
+   </children>
+</AnchorPane>

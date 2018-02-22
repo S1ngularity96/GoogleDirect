@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.effect.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="501.0" prefWidth="683.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextField fx:id="vornameTextField" layoutX="104.0" layoutY="69.0" prefHeight="35.0" prefWidth="476.0" promptText="Vorname">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="nachnameTextField" layoutX="104.0" layoutY="128.0" prefHeight="35.0" prefWidth="476.0" promptText="Nachname">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="landTextField" layoutX="104.0" layoutY="186.0" prefHeight="35.0" prefWidth="476.0" promptText="Land">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="StadtTeextField" layoutX="104.0" layoutY="243.0" prefHeight="35.0" prefWidth="476.0" promptText="Stadt">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="StrasseTextField" layoutX="104.0" layoutY="296.0" prefHeight="35.0" prefWidth="476.0" promptText="Straße">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="HausnummerTextField" layoutX="104.0" layoutY="349.0" prefHeight="35.0" prefWidth="476.0" promptText="Hausnummer">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </TextField>
+      <Button fx:id="addPersonButton" layoutX="104.0" layoutY="419.0" mnemonicParsing="false" onAction="#personHinzufuegenAction" prefHeight="45.0" prefWidth="202.0" text="Hinzufügen" />
+      <Button fx:id="abbrechenButton" layoutX="378.0" layoutY="419.0" mnemonicParsing="false" onAction="#abbrechenButtonAction" prefHeight="45.0" prefWidth="202.0" text="Abbrechen" />
+      <Label alignment="CENTER" layoutX="104.0" layoutY="14.0" prefHeight="17.0" prefWidth="476.0" text="Person hinzufügen">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
