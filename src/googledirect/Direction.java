@@ -13,7 +13,7 @@ package googledirect;
  */
 public class Direction {
     
-   final String googleAPIkey = "AIzaSyD6e1wVZGTK7pHF1KoQiGNwhnU1YPDVc-s";
+   final String googleAPIkey = "";
    private String Country= "";
    private String City = "";
    private String Street = "";
